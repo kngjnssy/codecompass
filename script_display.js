@@ -1,11 +1,12 @@
 // KINGA EVENTS
 $.getJSON('https://www.googleapis.com/calendar/v3/calendars/kinga.janossy@code.berlin/events?key=AIzaSyBukHk_dPkq5FZB4nvTzRKxZ67QL2pP9e4', function(data){
 var events = data.items;
-var today = new Date("2019-12-02T14:00:00+02:00"); 
+var today = new Date("2019-11-25T14:00:00+02:00"); 
 // var today = new Date();   
 var current_date = today.toISOString();
 // var test_date = '2017-10-17T14:00:00+02:00'
 // console.log("events in this calendar: " + events.length)
+
 
 var monthNames = [
   "January",
@@ -102,13 +103,32 @@ if (events.length > 0) {
       }
       if(event.location) {
         var room = event.location;
-      }  
+        var room_info ="";
+      } 
+
+      else {
+        var room_info ="";
+      }
+
       if (room.includes("Amy")) {
         room = 'AFF'
       }
       else if (room.includes("Rock")) {
         room = 'ROCK'
       }
+
+      else if (room.includes("Cinema")) {
+        room = 'CINEMA'
+      }
+
+      else if (room.includes("kitchen")) {
+        room = 'KITCHEN'
+      }
+
+      else if (room.includes("Caf")) {
+        room = 'CAFE'
+      }
+
       else if (room.includes("Lexis")) {
         room = 'LEXIS'
       }
@@ -117,6 +137,11 @@ if (events.length > 0) {
       }
       else if (room.includes("New School Kitchen")) {
         room = 'NSKitchen'
+      }
+
+      else {
+        room = 'RIGHT HERE'
+        // room_info = 'HERE'
       }
 
       var event_name = event.summary;
@@ -143,6 +168,26 @@ if (events.length > 0) {
       if (rooms_left.includes(room)) {
         arrow_gif = "leftarrow.gif";
       }
+
+      else if (room == 'RIGHT HERE'){
+        arrow_gif = '40x40blacktile.bmp';
+
+      }
+
+      else if (room == 'CINEMA'){
+        arrow_gif = 'uparrow.gif';
+
+      }
+
+      else if (room == 'LEXIS'){
+        arrow_gif = 'downarrow.gif';
+
+      }
+      else if (room == 'CAFE'){
+        arrow_gif = 'downarrow.gif';
+
+      }
+
       else {
         arrow_gif = "rightarrow.gif";
       }
@@ -150,26 +195,27 @@ if (events.length > 0) {
       if (!when) {
         when = event.start.date;
       } // to show full day events
-      
+
       let dateandtime = '<div class="grid-container"><span class="hour">' 
-        + hour + ":" + minutes + 
-        // "-" + endHour + ":" + endMinutes +
-        '<br><span class="date">'+ date + " " + month + '</span></div>'
-     
+      + hour + ":" + minutes + 
+      // "-" + endHour + ":" + endMinutes +
+      '<br><span class="date">'+ date + " " + month + '</span></div>'
+   
       let title = '<div class="grid-container"><span class="type">'
-        + event_type + 
-        '<br><span class="title">' + event_name + '</span></div>'
+      + event_type + 
+      '<br><span class="title">' + event_name + '</span></span>'
 
-      let location = '<div class="grid-container"><span class="location">'
-        + room + '</span></div>'
+      let location = '<div class="grid-container"><span class="location">' + room_info +'<br>'
+      + room + '</span></div>'
 
-      let arrow = '<div class="grid-container"> <img class="arrow" src="assets/'+ arrow_gif + '"> </div>'
+      let arrow = '<div class="grid-container"><span class="arrow"><br><img src="assets/'+ arrow_gif + '"> </span></div>'
 
       container.innerHTML += dateandtime
       container.innerHTML += title
       container.innerHTML += location
       container.innerHTML += arrow
     
+
     }
 
 }})

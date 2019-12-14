@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script_display.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="stylez.css" />
+    <title>CODE Compass</title>
+    <link rel="icon" href="assets/favico.png">
+
+    <script type="text/javascript">
+      function startTime()
+      {
+      var today=new Date();
+      var h=today.getHours();
+      var m=today.getMinutes();
+      var s=today.getSeconds();
+      // add a zero in front of numbers<10
+      m=checkTime(m);
+      s=checkTime(s);
+      document.getElementById('txt').innerHTML='<div class="date">'+h+":"+m+":"+s+'</div>';
+      t=setTimeout('startTime()',500);
+      }
+      function checkTime(i)
+      {
+      if (i<10)
+      {
+      i="0" + i;
+      }
+      return i;
+      }
+      </script>   
+  
+  </head>
+
+    <!-- <div>
+      <h1>Welcome to the Campus</h1>
+      <br/>
+      <h3 class="h3">Next up...</h3>
+    </div> -->
+    
+<!-- -------------------------------------------------jquery CALENDAR---------------------------------------------------------->
+<body onload="startTime()">
+  <div><span class="currenttime" id="txt"></span></div>
+  
+    <div class="grid-container"></div>
+    <img
+    src="assets/campus_map_here_u_r_00_small_here.jpg"
+    style="max-width:100%;height:auto;"
+    />
+   <div>
+    <img
+    src="assets/compass_02.gif"
+    alt="compass"
+    style="margin-left:2200px;max-width:400px;height:auto;"
+    />
+  </div>
+   
+   
+  </body>
+</html>
