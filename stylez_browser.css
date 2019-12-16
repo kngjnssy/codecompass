@@ -85,6 +85,11 @@ h3 {
   /* line-height: 140%; */
   color: azure;
 }
+.day {
+  font-family: "Roboto-Regular";
+  font-size: 20px;
+  color: rgba(240, 255, 255, 0.795);
+}
 
 .title {
   font-family: "Roboto-Regular";

@@ -15,14 +15,54 @@
     <script type="text/javascript">
       function startTime()
       {
+        var dayNames = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+var monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
       var today=new Date();
+      var day=today.getDay();
+      var d=today.getDate();
+      var mo=today.getMonth();
+      var y=today.getFullYear();
       var h=today.getHours();
       var m=today.getMinutes();
       var s=today.getSeconds();
       // add a zero in front of numbers<10
+      for (var i=0; i < 7; i++) {
+              if (day == i){
+                day = dayNames[i]
+              } 
+          }
+    for (var i=0; i <= 12; i++) {
+      if (mo == i){
+            mo = monthNames[i]
+          } 
+        }
       m=checkTime(m);
       s=checkTime(s);
-      document.getElementById('txt').innerHTML='<div class="date">'+h+":"+m+":"+s+'</div>';
+      document.getElementById('txt').innerHTML='<div class="currenttime">Today is ' 
+        +day+", "+d+" "+mo+", "+y+" "+h+":"+m+":"+s+
+        "<br>but let's pretend it's 25th November"+
+        '</div>';
       t=setTimeout('startTime()',500);
       }
       function checkTime(i)
@@ -46,8 +86,11 @@
 <!-- -------------------------------------------------jquery CALENDAR---------------------------------------------------------->
 <body onload="startTime()">
   <div><span class="currenttime" id="txt"></span></div>
-  
+  <!-- <span style="color: blanchedalmond;float:2600px;"></span> -->
     <div class="grid-container"></div>
+    <!-- <h3>past events</h3>
+
+    <div class="grid-container-past"></div> -->
     <img
     src="assets/campus_map_here_u_r_00_small_here.jpg"
     style="max-width:100%;height:auto;"

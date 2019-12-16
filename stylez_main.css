@@ -100,6 +100,11 @@ h3 {
   font-size: 35px;
   color: azure;
 }
+.day {
+  font-family: "Roboto-Regular";
+  font-size: 25px;
+  color: rgba(240, 255, 255, 0.795);
+}
 
 .title {
   font-family: "Roboto-Regular";
@@ -182,7 +187,9 @@ h3 {
 
 .currenttime {
   font-size: 85px;
-  color: blue;
+  color:cornsilk;
+
+
 }
 
 

@@ -1,8 +1,8 @@
 // KINGA EVENTS
 $.getJSON('https://www.googleapis.com/calendar/v3/calendars/kinga.janossy@code.berlin/events?key=AIzaSyBukHk_dPkq5FZB4nvTzRKxZ67QL2pP9e4', function(data){
 var events = data.items;
-var today = new Date("2019-11-25T08:00:00+02:00"); 
-// var today = new Date();   
+// var today = new Date("2019-11-25T08:00:00+02:00"); 
+var today = new Date();   
 var current_date = today.toISOString();
 // var test_date = '2017-10-17T14:00:00+02:00'
 // console.log("events in this calendar: " + events.length)
@@ -57,12 +57,13 @@ if (events.length > 0) {
       if(event.start){
         if (event.start.dateTime > current_date) {
           filteredEvents.push(event) ;
+          console.log(filteredEvents)
       }}
     }
     filteredEvents.sort(comparison)
-    for(let k = 0; k < filteredEvents.length; k++){
+    for(let k = 0; k < 10; k++){
       let event = filteredEvents[k];
-      if (event.start.dateTime) {
+      if (event.end.dateTime) {
         var when = new Date(event.start.dateTime)
         var whenEnds = new Date(event.end.dateTime)
         var date = when.getDate()
@@ -101,6 +102,11 @@ if (events.length > 0) {
         }
 
       }
+
+      if (!when) {
+        when = event.start.date;
+      } // to show full day events
+
       if(event.location) {
         var room = event.location;
         var room_info ="";
@@ -108,6 +114,7 @@ if (events.length > 0) {
 
       else {
         var room_info ="";
+        var room=""
       }
 
       if (room.includes("Amy")) {
@@ -135,17 +142,16 @@ if (events.length > 0) {
       else if (room.includes("Jungle")) {
         room = 'JUNGLE'
       }
-
-      else if (room.includes("Scissors")) {
-        room = 'SCISSORS'
-      }
       else if (room.includes("New School Kitchen")) {
         room = 'NSKitchen'
       }
+      else if (room.includes("Brunnen")) {
+        room = 'Mein Haus am See'
+      }
 
       else {
-        room = 'RIGHT HERE'
-        // room_info = 'HERE'
+        room = 'SCISSORS'
+        room_info = 'in front of'
       }
 
       var event_name = event.summary;
@@ -196,15 +202,14 @@ if (events.length > 0) {
         arrow_gif = "rightarrow.gif";
       }
   
-      if (!when) {
-        when = event.start.date;
-      } // to show full day events
-
+    
       let dateandtime = '<div class="grid-container-browser"><span class="hour">' 
       + hour + ":" + minutes + 
       // "-" + endHour + ":" + endMinutes +
       '<br><span class="date">'+ date + " " + month + '</span></div>'
    
+
+      
       let title = '<div class="grid-container-browser"><span class="type">'
       + event_type + 
       '<br><span class="title">' + event_name + '</span></span>'
