@@ -150,8 +150,8 @@ if (events.length > 0) {
       }
 
       else {
-        room = 'SCISSORS'
-        room_info = 'in front of'
+        room = 'CAMPUS'
+        room_info = 'somewhere on'
       }
 
       var event_name = event.summary;
