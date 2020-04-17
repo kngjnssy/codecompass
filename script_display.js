@@ -1,5 +1,9 @@
 // KINGA EVENTS
 $.getJSON('https://www.googleapis.com/calendar/v3/calendars/kinga.janossy@code.berlin/events?key=AIzaSyBukHk_dPkq5FZB4nvTzRKxZ67QL2pP9e4', function(data){
+// ID EVENTS
+// code.berlin_pg1oevsslhon2p2fh2pemvrhms@group.calendar.google.com
+// $.getJSON('https://www.googleapis.com/calendar/v3/calendars/code.berlin_pg1oevsslhon2p2fh2pemvrhms@group.calendar.google.com/events?key=AIzaSyBukHk_dPkq5FZB4nvTzRKxZ67QL2pP9e4', function(data){
+
 var events = data.items;
 var today = new Date("2019-11-25T14:00:00+02:00"); 
 // var today = new Date();   
@@ -407,7 +411,7 @@ for(let k = 0; k < 15; k++){
       let location = '<div class="grid-container-past"><span class="location">' + room_info +'<br>'
       + room + '</span></div>'
 
-      // let arrow = '<div class="grid-container-past"><span class="arrow"><br><img src="assets/'+ arrow_gif + '"> </span></div>'
+      // let arrow = '<div class="grid-container-past"><span class="arrow"><br><img src="assets/'+ "WTF" + '"> </span></div>'
 
       containerPast.innerHTML += dateandtime
       containerPast.innerHTML += title
