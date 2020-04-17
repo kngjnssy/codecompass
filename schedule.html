@@ -24,14 +24,54 @@
       <script type="text/javascript">
         function startTime()
         {
+          var dayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  var monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
         var today=new Date();
+        var day=today.getDay();
+        var d=today.getDate();
+        var mo=today.getMonth();
+        var y=today.getFullYear();
         var h=today.getHours();
         var m=today.getMinutes();
         var s=today.getSeconds();
         // add a zero in front of numbers<10
+        for (var i=0; i < 7; i++) {
+                if (day == i){
+                  day = dayNames[i]
+                } 
+            }
+      for (var i=0; i <= 12; i++) {
+        if (mo == i){
+              mo = monthNames[i]
+            } 
+          }
         m=checkTime(m);
         s=checkTime(s);
-        document.getElementById('txt').innerHTML='<div class="date">'+h+":"+m+":"+s+'</div>';
+        document.getElementById('txt').innerHTML = '<div class="currenttime">Right now it is ' 
+          +day+", "+d+" "+mo+", "+y+" "+h+":"+m+":"+s+
+          "<br>but let's pretend it's 25th November, 2019"+
+          '</div>';
         t=setTimeout('startTime()',500);
         }
         function checkTime(i)
@@ -72,34 +112,30 @@
       background-color: #111;
       color:ivory;
     }
+
+
     </style>
   </head>
  
 
 <body onload="startTime()">
-  <!-- <div>
-    <span class="currenttime" id="txt"></span>
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="floorplan.html">FLOORPLAN</a></li>
+      <li><a href="schedule.html">LIVE SCHEDULE</a></li>
+      <li><a href="model.html">3D MODEL</a></li>
+      <li><a href="game.html">GET THE GAME!</a></li>
+      <li style="float:right; margin-right:10px;" ><a class="active" href="about.html">about</a></li>
+    </ul>
+  </nav>
+
+  <div>
+    <span class="currenttime" id="txt">hallo</span>
   </div>
-   -->
 
-   <ul>
-    <li><a href="index.html">HOME</a></li>
-    <li><a href="floorplan.html">FLOORPLAN</a></li>
-    <li><a href="schedule.html">LIVE SCHEDULE</a></li>
-    <li><a href="model.html">3D MODEL</a></li>
-    <li><a href="game.html">GET THE GAME!</a></li>
-    <li style="float:right; margin-right:10px;" ><a class="active" href="about.html">about</a></li>
-  </ul>
-    <div class="grid-container-browser"></div>
+  <div class="grid-container-browser"></div>
 
-   <!-- <div>
-    <img
-    src="assets/compass_02.gif"
-    alt="compass"
-    style="margin-left:2200px;max-width:400px;height:auto;"
-    />
-  </div> -->
-   
    
   </body>
 </html>

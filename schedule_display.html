@@ -68,9 +68,9 @@ var monthNames = [
         }
       m=checkTime(m);
       s=checkTime(s);
-      document.getElementById('txt').innerHTML='<div class="currenttime">Today is ' 
+      document.getElementById('txt').innerHTML = '<div class="currenttime">Right now it is ' 
         +day+", "+d+" "+mo+", "+y+" "+h+":"+m+":"+s+
-        "<br>but let's pretend it's 25th November"+
+        "<br>but let's pretend it's 25th November, 2019"+
         '</div>';
       t=setTimeout('startTime()',500);
       }
@@ -86,16 +86,8 @@ var monthNames = [
   
   </head>
 
-    <!-- <div>
-      <h1>Welcome to the Campus</h1>
-      <br/>
-      <h3 class="h3">Next up...</h3>
-    </div> -->
-    
-<!-- -------------------------------------------------jquery CALENDAR---------------------------------------------------------->
 <body onload="startTime()">
   <div><span class="currenttime" id="txt"></span></div>
-  <!-- <span style="color: blanchedalmond;float:2600px;"></span> -->
     <div class="grid-container"></div>
     <!-- <h3>past events</h3>
 
