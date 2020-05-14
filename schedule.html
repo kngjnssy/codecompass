@@ -68,10 +68,13 @@
           }
         m=checkTime(m);
         s=checkTime(s);
-        document.getElementById('txt').innerHTML = '<div class="currenttime">Right now it is ' 
-          +day+", "+d+" "+mo+", "+y+" "+h+":"+m+":"+s+
-          "<br>but let's pretend it's 25th November, 2019"+
-          '</div>';
+        // document.getElementById('txt').innerHTML = '<div class="currenttime">Right now it is ' 
+        //   +day+", "+d+" "+mo+", "+y+" "+h+":"+m+":"+s+
+        //   "<br>but let's pretend it's 25th November, 2019"+
+        //   '</div>';
+
+        document.getElementById('txt').innerHTML = '<div class="currenttime"> please check '
+          + '<a href="https://compass.tremula.de/">CODE.compass 2.\0</a> for the latest updates</div>'
         t=setTimeout('startTime()',500);
         }
         function checkTime(i)

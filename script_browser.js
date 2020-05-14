@@ -8,7 +8,6 @@ var current_date = today.toISOString();
 // var test_date = '2017-10-17T14:00:00+02:00'
 // console.log("events in this calendar: " + events.length)
 
-
 var monthNames = [
   "January",
   "February",
