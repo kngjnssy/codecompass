@@ -1,115 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154653167-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script_browser.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="queries.css" />
 
-  gtag('config', 'UA-154653167-1');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>CODE Compass</title>
     <link rel="icon" href="assets/favico.png">
+  </head>
 
-    <link rel="stylesheet" type="text/css" href="stylez_main.css" />
-    <!-- <style>
-    ul {
-        list-style-type: none;
-        margin: 10%;
-        padding: 0;
-        width: 30%;
-        background-color:black;
-        }
-
-    li a {
-        display: block;
-        color: cornsilk;
-        padding: 8px 16px;
-        margin-bottom: 3%;
-        border:1px solid cornsilk;
-        /* border-radius: 15px; */
-        text-decoration: none;
-        font-family: "SourceSansPro-Light";
-        font-size: 5vh;
-        text-align: center;
-        }
-
-    /* Change the link color on hover */
-    li a:hover {
-        background-color: rgb(51, 50, 50);
-        color: cornsilk;
-        }
-
-    </style> -->
-
-    <style>
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color:black;
-          font-family: "SourceSansPro-Light";
-          font-size: 25px;
-      }
+  <style>
+    p {
+      margin: 0;
+    }
+  </style>
+ 
+<body onload="startTime()">
+  <div>
+    <span class="currenttime" id="txt"></span>
+  </div>
   
-      li {
-        float: left;
-      }
-  
-      li a {
-        display: block;
-        color: grey;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-  }
-  
-  /* Change the link color to #111 (black) on hover */
-  li a:hover {
-    background-color: #111;
-    color:ivory;
-  }
-  span {
-    display: block;
-        color:white;
-        text-align: center;
-        padding: 14px 16px;
-        font-size: 200%;
-        font-family: "SourceSansPro-Light";
-  }
-      </style>
-</head>
-<body>
-  
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="floorplan.html">FLOORPLAN</a></li>
-        <li><a href="schedule.html">LIVE SCHEDULE</a></li>
-        <li><a href="model.html">3D MODEL</a></li>
-        <li><a href="game.html">GET THE GAME!</a></li>
-        <li style="float:right; margin-right:10px;" ><a class="active" href="about.html">about</a></li>
-      </ul>
 
-      <div>
-          <span style="margin-top: 150px;">Welcome to </span>
-        <img
-        src="assets/compass_02.gif"
-        alt="compass"
-        style="max-width:500px;height:auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50px;
-        width: 50%;"
-        />
-        <span style="margin-top: 40px;">the site that helps to navigate around campus through space and time </span>
-      </div>
-     
+   <svg version="1.1" class="plan" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="7022.68" height="2631.32" viewBox="-277.49 -115 7022.68 2631.32" xml:space="preserve">
+    <path class="rooms__background" stroke="#000" stroke-width="50" stroke-linejoin="round" d="M5704.42 176.78v1469.65h-904.4V353.4L4083.4 563.92v1082.51H2331.82h.12l-67.22-197.99-584.33 197.99h-44.11l-62.94-251.59L-167.88 1998v387.84H6442.6V25z"/>
+    <path class="room__silentspace" fill="#FD7869" d="M6419.32 54.05v241.4h-334.01V122.78l334.01-68.73z"/>
+    <path class="room__aff" fill="#FD7869" d="M5724.1 195.35l1.47 423.68h330.38l-1.14-487.68-330.71 64z"/>
+    <path class="room__peace" fill="#DCFD00" d="M4778.73 383.97V571.9l-342.02-.51v-88.64l342.02-98.78z"/>
+    <path class="room__roomy" fill="#787779" d="M4105.67 577.52l-.47 532.32h302.05l1.87-619.71-303.45 87.39z"/>
+    <path class="room__echo" fill="#F8C26E" d="M1566.15 1424.63l48.71 193.95v42.44h-184.57V1470l135.86-45.37z"/>
+    <path class="room__warp" stroke="#CECACA" stroke-width="5" fill="#F8C26E" d="M1403.35 1481.04l-216.3 72.94-.84 107.04h216.95l.19-179.98z"/>
+    <path class="room__zuse" fill="#F8C26E" d="M1157.78 1570.87v-2.74l-221.16 73.49v182.24h221.16v-252.99z"/>
+    <path class="room__ada" fill="#F8C26E" d="M906.55 1652l-163.72 55.6v116.27h163.72V1652z"/>
+    <path class="room__8bit" fill="#DCFD00" d="M47.5 2114h205v249.84h-205z"/>
+    <path class="room__lizard" fill="#CECACA" d="M2977.5 2048.84h299v316h-299z"/>
+    <path class="room__paper" fill="#787779" d="M276.33 2049.34h660v315h-660z"/>
+    <path class="room__rock" fill="#787779" d="M960.15 2049.34h667v315h-667z"/>
+    <path class="room__scissors" fill="#787779" d="M1650.97 2049.34h683.88v315h-683.88z"/>
+    <path class="room__spock" fill="#CECACA" d="M2358.68 2049.34h595v315h-595z"/>
+    <path class="toilet" fill="#363636" d="M3296.5 1845.87h509.98v520.97H3296.5z"/>
+    <path class="room__kitchen" fill="#EAE8E8" d="M4090.12 1853.7h688.79v508.82h-688.79z"/>
+    <path class="room__morty" fill="#CECACA" d="M4101.5 1389.84h312v235h-312z"/>
+    <path class="room__rick" fill="#CECACA" d="M4101.5 1131.84h312v236h-312z"/>
+    <path class="room__6min team" fill="#40BFC3" d="M5720.5 1160.84h340v243h-340z"/>
+    <path class="room__cognito team" fill="#FD7869" d="M5720.5 897.57h340v243h-340z"/>
+    <path class="room__nymeria" fill="#FD7869" d="M5720.5 639.29h340v238h-340z"/>
+    <path class="room__teamroom" fill="#FD7869" d="M6080.5 321.84h344v1082h-344z"/>
+    <path class="room__jungle" fill="#EAE8E8" d="M4820.23 1851.18h603.96v510.85h-603.96z"/>
+    <path class="room__hally" d="M4435 599.34h348v1023h-348z"/>
+    <path class="toilet" fill="#363636" d="M5720.5 1843.37h704v522.47h-704z"/>
+  </svg>
+
+
+    <div class="page__title">Upcoming events on campus</div>
+    <div class="main-container"></div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scrips_axios.js"></script>
+
 </body>
+
+  <script type="text/javascript">
+    function startTime()
+    {
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    // add a zero in front of numbers<10
+    m=checkTime(m);
+    s=checkTime(s);
+    document.getElementById('txt').innerHTML='<div class="date">'+h+":"+m+":"+s+'</div>';
+    t=setTimeout('startTime()',500);
+    }
+    function checkTime(i)
+    {
+    if (i<10)
+    {
+    i="0" + i;
+    }
+    return i;
+    }
+    </script>   
+
 </html>

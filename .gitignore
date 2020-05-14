@@ -1,7 +1,3 @@
-_workfiles
-date_test.js
-grid_test.html
-test.css
-testcalendar.html
+.vscode/    
 node_modules/
-script_display copy.js
+oauth2/

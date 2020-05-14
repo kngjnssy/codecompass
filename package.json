@@ -1,15 +1,24 @@
 {
   "name": "00_website_grid",
   "version": "1.0.0",
-  "description": "",
   "main": "jquery_script.js",
-  "homepage" : "https://kngjnssy.github.io/codecompass/",
+  "homepage": "https://kngjnssy.github.io/codecompass/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1" 
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "gh-pages": "^2.1.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kngjnssy/codecompass.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/kngjnssy/codecompass/issues"
+  },
+  "description": ""
 }
