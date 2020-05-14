@@ -2,7 +2,11 @@
 $.getJSON('https://www.googleapis.com/calendar/v3/calendars/kinga.janossy@code.berlin/events?key=AIzaSyBukHk_dPkq5FZB4nvTzRKxZ67QL2pP9e4', function(data){
 
 var events = data.items;
+<<<<<<< HEAD
 var today = new Date("2020-02-01T08:00:00+02:00"); 
+=======
+var today = new Date("2019-11-25T08:00:00+02:00"); 
+>>>>>>> e709c96db21c47367a74b35a2731f1daab564bc7
 // var today = new Date();   
 var current_date = today.toISOString();
 // var test_date = '2017-10-17T14:00:00+02:00'

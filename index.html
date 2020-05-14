@@ -62,29 +62,22 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="scrips_axios.js"></script>
 
+      <div>
+          <span style="margin-top: 150px;">Welcome to </span>
+        <img
+        src="assets/compass_02.gif"
+        alt="compass"
+        style="max-width:500px;height:auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        width: 50%;"
+        />
+        <span style="margin-top: 40px;">the site that helps to navigate around campus through space and time </span>
+        <h1> CODE.compass 2.0 is coming soon! </h1>
+        <h2> thank you for your patience </h2>
+      </div>
+     
 </body>
-
-  <script type="text/javascript">
-    function startTime()
-    {
-    var today=new Date();
-    var h=today.getHours();
-    var m=today.getMinutes();
-    var s=today.getSeconds();
-    // add a zero in front of numbers<10
-    m=checkTime(m);
-    s=checkTime(s);
-    document.getElementById('txt').innerHTML='<div class="date">'+h+":"+m+":"+s+'</div>';
-    t=setTimeout('startTime()',500);
-    }
-    function checkTime(i)
-    {
-    if (i<10)
-    {
-    i="0" + i;
-    }
-    return i;
-    }
-    </script>   
-
 </html>
